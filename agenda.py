@@ -4,8 +4,14 @@ import os
 agenda = []
 
 # Adicionar contato
-def adicionar_contato(nome, telefone, email):
-    pass
+def adicionar_contato(agenda, nome, telefone, email):
+    if not nome or not telefone:
+        print("⚠️  Informe nome e telefone.")
+    else:
+        contato = {"nome": nome, "telefone": telefone, "email": email, "favorito": False}
+        agenda.append(contato)
+        print("✅  Contato adicionado.")
+    return
 
 # Visualizar lista de contato
 def listar_contatos(nome, telefone, email):
@@ -57,6 +63,8 @@ while True:
             nome        = input("Informe um nome*: ")
             telefone    = input("Informe número de telefone*: ")
             email       = input("Informe um e-mail: ")
-            adicionar_contato(nome, telefone, email)
+            adicionar_contato(agenda, nome, telefone, email)
+        elif escolha == 2:
+            print(agenda) # Testar
         elif escolha == 6:
             break
