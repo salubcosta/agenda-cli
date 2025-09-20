@@ -11,7 +11,6 @@ def adicionar_contato(agenda, nome, telefone, email):
         contato = {"nome": nome, "telefone": telefone, "email": email, "favorito": False}
         agenda.append(contato)
         print("✅  Contato adicionado.")
-    return
 
 # Visualizar lista de contato
 def listar_contatos(agenda):
