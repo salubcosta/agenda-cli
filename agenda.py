@@ -14,8 +14,15 @@ def adicionar_contato(agenda, nome, telefone, email):
     return
 
 # Visualizar lista de contato
-def listar_contatos(nome, telefone, email):
-    pass
+def listar_contatos(agenda):
+    print("Lista de contatos: ")
+    for indice, contato in enumerate(agenda):
+        nome        = contato['nome']
+        telefone    = contato['telefone']
+        email       = contato['email']
+        favorito    = "✅" if contato['favorito'] else "❌"
+
+        print(f"Número do Contato [{indice+1}] Nome: {nome}. Telefone: {telefone}. Email: {email}. Favorito: {favorito}")
 
 # Editar contato
 def editar_contato(nome, telefone, email):
@@ -65,6 +72,6 @@ while True:
             email       = input("Informe um e-mail: ")
             adicionar_contato(agenda, nome, telefone, email)
         elif escolha == 2:
-            print(agenda) # Testar
+            listar_contatos(agenda)
         elif escolha == 6:
             break
